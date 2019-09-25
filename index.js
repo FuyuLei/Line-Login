@@ -49,7 +49,7 @@ app.get('/auth/line/cb', lineLogin.authcb( //從LINE登入後接收訊息
     req.session.authPass = true;
     req.session.profile = token.id_token;
     console.log(req.session.profile.sub);
-    res.redirect('https://test-login-20190925.herokuapp.com');
+    res.redirect('https://105stu.ntub.edu.tw');
   }, (req, res, next, error) => {
     req.session.authPass = false;
     req.session.errMsg = error.message;
