@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
   if (req.session.authPass) {
     const profile = req.session.profile;
     res.render('success', profile); //自訂成功登入頁面
-    console.log('===============' + profile[0]);
+    console.log('===============' + profile.userId);
   } else if (req.session.errMsg) {
     res.render('login', {  //自訂尚未登入頁面，顯示錯誤訊息
       ErrMsg: req.session.errMsg
