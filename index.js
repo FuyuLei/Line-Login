@@ -14,7 +14,7 @@ const session_options = {
 const loginConfig = {
   channel_id: '1620460956', //process.env.LINE_LOGIN_CHANNEL_ID
   channel_secret: 'fc807a45c35347816e75a63e09f0bb30', //process.env.LINE_LOGIN_CHANNEL_SECRET
-  callback_url: 'http://local', //process.env.LINE_LOGIN_CALLBACK_URL
+  callback_url: 'https://test-login-20190925.herokuapp.com/auth/line/cb', //process.env.LINE_LOGIN_CALLBACK_URL
   scope: 'openid profile',
   prompt: 'consent',
   bot_prompt: 'normal'
@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
   if (req.session.authPass) {
     const profile = req.session.profile;
     console.log(profile);
-    res.render('success', profile); //自訂成功登入頁面
+    // res.render('success', profile); //自訂成功登入頁面
   } else if (req.session.errMsg) {
     res.render('login', {  //自訂尚未登入頁面，顯示錯誤訊息
       ErrMsg: req.session.errMsg
