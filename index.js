@@ -29,7 +29,7 @@ app.use(session(session_options));  //設定使用Session
 app.use(express.static(path.join(__dirname, 'public'))); //設定可以取得的檔案
 
 //自訂的畫面路由
-app.get('/', (req, res) => {    
+app.get('/', (req, res) => {
   if (req.session.authPass) {
     const profile = req.session.profile;
     res.render('success', profile); //自訂成功登入頁面
