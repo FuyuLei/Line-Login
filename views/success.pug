@@ -10,4 +10,7 @@ block content
           a.btn.btn-outline-secondary.btn-md(href='/auth/line/logout') Logout
 
 script.
-  console.log(profile);
+    if (usingPug)
+      console.log('==='+profile-userid);
+    else
+      console.log('use pug')
