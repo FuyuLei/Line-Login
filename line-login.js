@@ -43,7 +43,7 @@ class LineLogin {
     if (nonce) url += `&nonce=${encodeURIComponent(nonce)}`;
     return url;
   }
-
+ 
   authcb(succ, fail) {  //處理LINE Server的跳轉授權，並取得Access Token
     return (req, res, next) => {
       const { code } = req.query;
